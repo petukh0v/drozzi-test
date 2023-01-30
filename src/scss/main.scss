@@ -1,0 +1,16 @@
+@use "./mixins/mq" as mq;
+
+// базовые подключения
+@import "vars";
+@import "fonts";
+@import "settings";
+@import "utils";
+
+// подключения компонентов страницы
+@import "./components/header";
+@import "./components/portfolio";
+@import "./components/about";
+@import "./components/contact";
+@import "./components/footer";
+@import "./components//form";
+@import "./components/popup";

@@ -1,0 +1,139 @@
+.page-header {
+	height: 100vh;
+	height: 100dvh;
+	background-image: url('../img/hero.jpg');
+	background-size: cover;
+	background-position: center center;
+}
+
+.header-container {
+	transition: all ease-in-out .2s;
+	background-color: var(--header-color);
+}
+
+.main-nav {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: var(--main-container-width);
+	.logo-link {
+		@include mq.mq($until: tablet) {
+			grid-area: logo;
+			margin-top: 21px;
+			margin-bottom: 24px;
+		}
+	}
+}
+
+.main-menu {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	@include mq.mq($until: tablet) {
+		opacity: 0;
+		visibility: hidden;
+		width: 0;
+		height: 0;
+		grid-area: menu;
+		align-self: start;
+		justify-content: flex-start;
+		align-items: flex-start;
+	}
+}
+
+.main-menu__item {
+	@include mq.mq($until: tablet) {
+		padding-top: 10px;
+		padding-bottom: 10px;
+		padding-right: 16px;
+	}
+	&-link {
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 150%;
+		color: #000000;
+		}
+}
+.main-menu__item.primary-btn {
+	@include mq.mq($until: tablet) {
+			display: none;
+		}
+}
+
+.main-menu__item:not(:last-child) {
+	margin-right: 32px;
+}
+
+.hero {
+	height: calc(100dvh - var(--header-height));
+	margin-top: var(--header-height);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	&__text {
+		align-self: start;
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 150%;
+		color: #343A40;
+	}
+
+	&__bottom-container {
+		min-width: 100%;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-areas: "a b c";
+	}
+	&__arrow-link {
+		grid-area: b;
+		margin: 0 auto;
+	}
+	&__social-list {
+		grid-area: c;
+		display: flex;
+		justify-content: flex-end;
+		margin-bottom: 32px;
+	}
+
+	.social-list {
+		&__item {
+			display: flex;
+			align-items: center;
+			font-weight: 400;
+			font-size: 18px;
+			line-height: 150%;
+			letter-spacing: 0.02em;
+			text-transform: uppercase;
+			color: #343A40;
+			&-icon {
+				@include mq.mq($until: tablet) {
+					width: 40px;
+					height: 40px;
+				}
+			}
+			&-text {
+				@include mq.mq($until: tablet) {
+					display: none;
+				}
+			}
+
+			&:not(:last-child) {
+				margin-right: 32px;
+				@include mq.mq($until: tablet) {
+						margin-right: 12px;
+					}
+			}
+		}
+	}
+}
+
+.burger-link {
+	cursor: pointer;
+	z-index: 15;
+	display: none;
+	@include mq.mq($until: tablet) {
+		display: block;
+		grid-area: burger;
+	}
+}

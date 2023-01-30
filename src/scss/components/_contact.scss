@@ -1,0 +1,102 @@
+.contact {
+	margin-top: 30px;
+
+	@include mq.mq($until: tablet) {
+		margin-top: 67px;
+	}
+
+	&__title {
+		margin-bottom: 27px;
+	}
+	&__grid {
+		display: grid;
+		grid-gap: 25px;
+		grid-template-areas:
+				"a c"
+				"b c";
+
+		@include mq.mq($until: tablet) {
+			grid-template-areas:
+					"a"
+					"c"
+					"b";
+		}
+
+	}
+	&__form {
+		grid-area: c;
+	}
+	&__brifs {
+		grid-area: b;
+	}
+	&__user-wrap {
+		grid-area: a;
+		display: flex;
+		flex-direction: column;
+	}
+	&__user-text-wrap {
+		display: flex;
+		flex-direction: column;
+	}
+	&__user-img {
+		margin-bottom: 32px;
+		max-width: 200px;
+	}
+	&__user-name {
+		margin-bottom: 6px;
+		font-weight: 600;
+		font-size: 24px;
+		line-height: 130%;
+		letter-spacing: -0.03em;
+		color: #212529;
+	}
+	&__user-desc {
+		margin-bottom: 72px;
+		font-weight: 400;
+		font-size: 18px;
+		line-height: 150%;
+		color: #343A40;
+		@include mq.mq($until: tablet) {
+			margin-bottom: 32px;
+		}
+	}
+
+	&__download {
+		margin-top: 17px;
+		@include mq.mq($until: tablet) {
+
+		}
+	}
+	&__download-title {
+		margin-bottom: 17px;
+		font-weight: 600;
+		font-size: 24px;
+		line-height: 130%;
+		letter-spacing: -0.03em;
+		color: #212529;
+		@include mq.mq($until: tablet) {
+
+		}
+	}
+	&__download-link {
+		margin-bottom: 8px;
+		padding-bottom: 5px;
+		border-bottom: 1px solid rgba(210, 32, 32, 0.4);
+		font-weight: 400;
+		font-size: 18px;
+		line-height: 30px;
+		color: #D22020;
+	}
+	&__download-text {
+		margin-right: 6px;
+	}
+}
+.contact__download-icon {
+	path {
+		fill: rgba(210, 32, 32, 0.4);
+	}
+	margin-left: -8px;
+	width: 11.5px;
+	height: 11.5px;
+	transform: rotate(-135deg);
+}

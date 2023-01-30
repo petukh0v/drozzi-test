@@ -1,0 +1,30 @@
+// ----- CUSTOM RESETS -----
+.ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.figure,
+.p,
+h3,
+h2 {
+	margin: 0;
+	padding: 0;
+}
+
+figure {
+	margin: 0;
+	padding: 0;
+}
+
+.a {
+	text-decoration: none;
+}
+
+.page-body {
+	min-height: 100vh;
+	min-height: 100dvh;
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+}
